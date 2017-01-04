@@ -59,14 +59,14 @@
   }
 
   .movie-listing-added {
-    border: 1px solid $pmfBlue;
-    @include add-box-shadow(0 0 10px $pmfBlue);
+    border: 1px solid $pmfColor;
+    @include add-box-shadow(0 0 10px $pmfColor);
 
     img, .title, .info {
       opacity: 0.5;
     }
     .add-remove-btn {
-      background-color: $pmfBlue;
+      background-color: $pmfColor;
     }
   }
 }
