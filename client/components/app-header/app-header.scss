@@ -1,0 +1,38 @@
+@import './fetched-movies-dropdown/fetched-movies-dropdown';
+@import './my-collection-button/my-collection-button';
+
+
+
+.app-header {
+  position: fixed;
+  background-color: #171e26;
+  @include add-box-shadow(0 6px 20px -4px #171e26);
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.app-header-container {
+  color: #fff;
+  width: 1050px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  overflow: hidden;
+
+  .container-left {
+    display: inline-block;
+    float: left;
+
+    .header-logo {
+      background: #171e26 url("/images/graphqlLogo.jpg") no-repeat center;
+      background-size: 50px 50px;
+      width: 190px;
+      height: 50px;
+    }
+  }
+  .container-right {
+    display: inline-block;
+    float: right;
+    line-height: 68px;
+  }
+};

@@ -1,0 +1,7 @@
+.my-movies-btn{
+  line-height:28px;
+  width: 140px;
+  &.is-active {
+    @include add-box-shadow(0 0 10px 3px #aaa);
+  }
+}

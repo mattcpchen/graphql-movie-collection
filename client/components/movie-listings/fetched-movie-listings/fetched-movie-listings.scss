@@ -1,0 +1,72 @@
+.fetched-movie-listings {
+  .movie-listing-item {
+    width: 280px;
+    padding: 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .movie-listing {
+    background-color: #eee;
+    width: 310px;
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    border: 1px solid #999;
+    @include add-box-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
+    position: relative;
+
+    &:nth-child(3n+0) {
+      margin-right: 0px;
+      clear: right;
+    }
+
+    .image {
+      width: 280px;
+      margin: 15px auto;
+      margin-bottom: 5px;
+      img {
+        width: 280px; /* original: 300px */
+        border: 1px solid #aaa;
+        box-shadow: 0 0 10px 1px #aaa;
+      }
+    }
+    .title {
+      font-weight: 600;
+      @extend .movie-listing-item;
+    }
+    .info {
+      @extend .movie-listing-item;
+      margin-bottom: 5px;
+    }
+    .add-remove-btn {
+      @include add-border-radius(50%);
+      @include add-box-shadow(0 0 10px 3px #fff);
+      width: 30px;
+      height: 30px;
+      background: #333;
+      font-size: 30px;
+      color: #fff;
+      font-weight: 900;
+      line-height: 26px;
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      top: 22px;
+      right: 22px;
+    }
+  }
+
+  .movie-listing-added {
+    border: 1px solid $pmfBlue;
+    @include add-box-shadow(0 0 10px $pmfBlue);
+
+    img, .title, .info {
+      opacity: 0.5;
+    }
+    .add-remove-btn {
+      background-color: $pmfBlue;
+    }
+  }
+}
