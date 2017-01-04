@@ -5,7 +5,7 @@ our own movie collection by requesting data from the most popular database Movie
 React and Redux are used as the front-end framework of this project.
 
 ![Screenshot_01](/public/assets/readme_01.jpg?raw=true)
-<br>
+<br><br>
 ![Screenshot_02](/public/assets/readme_02.jpg?raw=true)
 
 https://graphql-movie-collection.herokuapp.com/
