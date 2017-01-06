@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import gqlHandlers from '../common/graphqlHandlers';
+import gqlHandlers from '../common/gqlHandlers';
 import actions from '../actions/appActions';
 import MovieListings from './movie-listings/movie-listings';
 

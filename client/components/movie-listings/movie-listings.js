@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import storageHandlers from '../../common/storageHandlers';
-import gqlHandlers from '../../common/graphqlHandlers';
+import gqlHandlers from '../../common/gqlHandlers';
 import actions from '../../actions/appActions';
 import FetchedMovieListings from './fetched-movie-listings/fetched-movie-listings'
 import MyMovieListings from './my-movie-listings/my-movie-listings'

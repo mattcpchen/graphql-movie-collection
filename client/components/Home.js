@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import commonHandlers from '../common/commonHandlers';
 import storageHandlers from '../common/storageHandlers';
-import gqlHandlers from '../common/graphqlHandlers';
+import gqlHandlers from '../common/gqlHandlers';
 import actions from '../actions/appActions';
 import AppHeader from './app-header/app-header';
 
