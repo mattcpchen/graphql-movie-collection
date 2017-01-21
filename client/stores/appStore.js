@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducer from '../reducers/appReducer'
+import reducer from '../reducers/appReducer';
 
 
 
