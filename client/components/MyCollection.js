@@ -10,7 +10,6 @@ import MovieListings from './movie-listings/movie-listings';
 
 class MyCollection extends Component {
   _fetchMyMovies() {
-    this.props.dispatch(actions.selectCategory('MY_MOVIES'));
     gqlHandlers.displayMyCollection((status, movies) => {
       if(status === 200) {
         this.props.dispatch( actions.showMyMovies('SHOW_MY_MOVIES', movies) );

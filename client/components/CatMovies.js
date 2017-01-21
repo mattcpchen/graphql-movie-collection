@@ -11,17 +11,15 @@ import MovieListings from './movie-listings/movie-listings';
 
 class CatMovies extends Component {
   _fetchCatMovies() {
-    const pathName = this.props.location.pathname;
     const pathToCatMap = {
       '/popular': { value:'popular', type:'POPULAR_MOVIES' },
       '/topRated': { value:'top_rated', type:'TOP_RATED_MOVIES' },
       '/upcoming': { value:'upcoming', type:'UPCOMING_MOVIES' }
     };
   
-    const catValue = pathToCatMap[pathName].value;
-    const catType = pathToCatMap[pathName].type;
-  
-    this.props.dispatch(actions.selectCategory(catType));
+    const catValue = pathToCatMap[this.props.pathname].value;
+    const catType = pathToCatMap[this.props.pathname].type;
+    
     gqlHandlers.searchMoviesByCategory(catValue, (status, movies) => {
       if(status === 200) {
         this.props.dispatch( actions.showFetchedMovies('SHOW_'+catType, movies) );
@@ -51,7 +49,10 @@ class CatMovies extends Component {
 
 
 CatMovies = connect(
-  state => ({ isLoaded: state.isLoaded }),
+  state => ({
+    isLoaded: state.isLoaded,
+    pathname: state.routing.locationBeforeTransitions.pathname
+  }),
   dispatch => ({ dispatch }),
 )(CatMovies);
 
