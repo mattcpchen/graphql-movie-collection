@@ -7,26 +7,33 @@ import DropdownFilter from './dropdown-filter';
 
 
 
-let FetchedMoviesDropdown = ({category, clickToFetchMovies}) => {
+let FetchedMoviesDropdown = ({pathname, clickToFetchMovies}) => {
   const handleSelectChange = (event) => {
-    const clickValue = event.target.value;
-    clickToFetchMovies(clickValue);
-  };
-  const categoryToValue = (category) => {
-    const categoryMap = {
-      'ALL_MOVIES': 'all',
-      'POPULAR_MOVIES': 'popular',
-      'TOP_RATED_MOVIES': 'top_rated',
-      'UPCOMING_MOVIES': 'upcoming',
-      'MY_MOVIES': 'none'
+    const value = event.target.value;
+    const valueToPathMap = {
+      'all': '/all',
+      'popular': '/popular',
+      'top_rated': '/topRated',
+      'upcoming': '/upcoming'
     };
-    return categoryMap[category];
+    clickToFetchMovies(valueToPathMap[value]);
+  };
+  const pathnameToValue = (_pathname) => {
+    const pathToValueMap = {
+      '/': 'none',
+      '/all': 'all',
+      '/popular': 'popular',
+      '/topRated': 'top_rated',
+      '/upcoming': 'upcoming',
+      '/collection': 'none'
+    };
+    return pathToValueMap[_pathname];
   };
   
   return(
-    <DropdownFilter isActive = {category !== 'MY_MOVIES'}
-                    onChangeFilter = {handleSelectChange}
-                    selectedValue = {categoryToValue(category)}>
+    <DropdownFilter isActive = {pathnameToValue(pathname) !== 'none'}
+                    onChangeFilter = {(event)=>handleSelectChange(event)}
+                    selectedValue = {pathnameToValue(pathname)}>
     </DropdownFilter>
   );
 };
@@ -34,19 +41,11 @@ let FetchedMoviesDropdown = ({category, clickToFetchMovies}) => {
 
 FetchedMoviesDropdown = connect(
   state => ({
-    category: state.category
+    pathname: state.routing.locationBeforeTransitions.pathname
   }),
   dispatch => ({
-    clickToFetchMovies: (value) => {
-      const valToPathMap = {
-        'all':'/all',
-        'popular':'/popular',
-        'top_rated':'/topRated',
-        'upcoming':'/upcoming'
-      };
-      const path = valToPathMap[value];
-  
-      browserHistory.push(path);
+    clickToFetchMovies: (pathname) => {
+      browserHistory.push(pathname);
     }
   })
 )(FetchedMoviesDropdown);
