@@ -11,7 +11,6 @@ import MovieListings from './movie-listings/movie-listings';
 
 class AllMovies extends Component {
   _fetchAllMovies() {
-    this.props.dispatch(actions.selectCategory('ALL_MOVIES'));
     gqlHandlers.searchMoviesByCategory('all', (status, movies) => {
       if(status === 200) {
         this.props.dispatch( actions.showFetchedMovies('SHOW_ALL_MOVIES', movies) );

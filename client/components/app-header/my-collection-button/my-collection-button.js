@@ -6,22 +6,22 @@ import ButtonFilter from './button-filter';
 
 
 
-let MyCollectionButton = ({category, displayMessage}) => {
+let MyCollectionButton = ({pathname, displayMessage}) => {
   return (
-    <ButtonFilter isActive={category === 'MY_MOVIES'}
+    <ButtonFilter isActive={pathname === '/collection'}
     >My Collection: { displayMessage }</ButtonFilter>
   );
 };
 
 MyCollectionButton = connect(
   state => {
-    const category = state.category;
+    const pathname = state.routing.locationBeforeTransitions.pathname;
     const movies = state.movies;
     
     const displayMessage = (()=>{
       const myMoviesCount = state.collectionCount;
       
-      if(category === 'MY_MOVIES') {
+      if(pathname === '/collection') {
         return myMoviesCount.toString();
       }
       
@@ -32,7 +32,7 @@ MyCollectionButton = connect(
       return '(' +thisMoviesCount +'/'+ myMoviesCount +')'
     })();
     
-    return { category, displayMessage }
+    return { pathname, displayMessage }
   }
 )(MyCollectionButton);
 

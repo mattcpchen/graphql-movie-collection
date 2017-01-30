@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import styles from './app.scss';
 import appStore from './stores/appStore';
 import Home from './components/Home';
@@ -13,13 +14,12 @@ import MyCollection from './components/MyCollection';
 
 
 
-
-
+const history = syncHistoryWithStore(browserHistory, appStore);
 
 const App = () => {
   return (
     <Provider store={ appStore }>
-      <Router history={ browserHistory }>
+      <Router history={ history }>
         <Route path="/" component={ Home }>
           <IndexRoute component={ MyCollection }></IndexRoute>
           <Route path="/all" component={ AllMovies }></Route>
