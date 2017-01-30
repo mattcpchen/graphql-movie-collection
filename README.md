@@ -1,9 +1,16 @@
 ## GraphQL-Movie-Collection
 The purpose of this app is to demonstrate how to set up a simple GraphQL server. 
 In this project, We’ll write a small GraphQL server, create an app to browse and build
-our own movie collection by requesting data from the most popular database Movie Database(TMDb). 
-React and Redux are used as the front-end framework of this project.
+our own movie collection by requesting data from the most popular database Movie Database(TMDb).
+<br><br>
+React and Redux are used as the front-end framework of this project. However, these two libraries don't 
+coordinate pretty well. A library called "react-router-redux" is used to help us keep that bit of state 
+in sync with our Redux store. This library is not necessary cause using Redux and React Router directly 
+and write a reducer to track the current location will work just fine, but it save a lot of hassle. For more
+information regarding this library, please visit its github page.
 
+
+<br>
 ![Screenshot_01](/public/assets/readme_01.jpg?raw=true)
 <br><br>
 ![Screenshot_02](/public/assets/readme_02.jpg?raw=true)
