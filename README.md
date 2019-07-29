@@ -10,9 +10,7 @@ and write a reducer to track the current location will work just fine, but it sa
 information regarding this library, please visit its github page.
 
 
-<br>
 ![Screenshot_01](/public/assets/readme_01.jpg?raw=true)
-<br><br>
 ![Screenshot_02](/public/assets/readme_02.jpg?raw=true)
 
 https://graphql-movie-collection.herokuapp.com/
