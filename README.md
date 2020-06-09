@@ -18,10 +18,11 @@ information regarding this library, please visit its github page.
 
 ### Sneak peak:
 
+<div align="center">
 ![Screenshot_01](/public/assets/readme_01.jpg?raw=true)
-
-
+<p><p>
 ![Screenshot_02](/public/assets/readme_02.jpg?raw=true)
+</div>
 
 
 ### Getting Started:
