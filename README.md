@@ -1,4 +1,6 @@
 ## GraphQL-Movie-Collection
+
+### Summary:
 The purpose of this app is to demonstrate how to set up a simple GraphQL server. 
 In this project, We’ll write a small GraphQL server, create an app to browse and build
 our own movie collection by requesting data from the most popular database Movie Database(TMDb).
@@ -9,13 +11,21 @@ in sync with our Redux store. This library is not necessary cause using Redux an
 and write a reducer to track the current location will work just fine, but it save a lot of hassle. For more
 information regarding this library, please visit its github page.
 
+### Demo:
+
+[Heroku Demo](https://graphql-movie-collection.herokuapp.com/) can be seen here.
+
+
+### Sneak peak:
 
 ![Screenshot_01](/public/assets/readme_01.jpg?raw=true)
+
+
 ![Screenshot_02](/public/assets/readme_02.jpg?raw=true)
 
-https://graphql-movie-collection.herokuapp.com/
 
-## Getting Started
+### Getting Started
+
 <ul>
     <li><b>npm run dev:client</b>: development for client-side code only</li>
     <li><b>npm run dev:server</b>: development for server-side code only</li>
