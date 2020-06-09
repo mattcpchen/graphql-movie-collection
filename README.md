@@ -24,7 +24,7 @@ information regarding this library, please visit its github page.
 ![Screenshot_02](/public/assets/readme_02.jpg?raw=true)
 
 
-### Getting Started
+### Getting Started:
 
 <ul>
     <li><b>npm run dev:client</b>: development for client-side code only</li>
